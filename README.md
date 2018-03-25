@@ -1,4 +1,6 @@
 ##########################
+# Recommend reading this in RAW mode
+#
 # This was a simple program built to determine all possible outcomes for a math game
 # Rules of the game are:
 # Using the numbers 1 through 10 once, fill an inverted pyramid
