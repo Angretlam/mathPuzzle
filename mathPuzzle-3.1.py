@@ -52,13 +52,13 @@ stdscr.refresh()
 
 # Variables
 solved = 0 # Change this if you'd like to quit after a certain number of events or findings
-attempts = 0 # Incremented to track total number of events
+attempts = 1 # Incremented to track total number of events
 solutions = [] # An Array to track all the solutions. Don't give credit multiple times for same finding.
 solutions_str = ''
 patterns = [] # An array implemented to track all the patterns, prevent duplicate evaluations
 
 try:
-	while len(solutions) != 8: # I am assuming that 8 solutions is the max
+	while len(patterns) < 5040: # 5040 is the mathematical maximum number of patterns 
 		if ((x in patterns) == False):
 			patterns.append(x)
 
