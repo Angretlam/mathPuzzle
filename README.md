@@ -2,7 +2,7 @@ This was a simple program built to determine all possible outcomes for a math ga
 Rules of the game are:
 Using the numbers 1 through 10 once, fill an inverted pyramid
 
-` _   _   _   _`
+` _   _   _   _`\n
 `   _   _   _`
 `     _   _`
 `       _`
