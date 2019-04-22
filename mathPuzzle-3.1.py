@@ -57,11 +57,18 @@ solutions = [] # An Array to track all the solutions. Don't give credit multiple
 solutions_str = ''
 patterns = [] # An array implemented to track all the patterns, prevent duplicate evaluations
 
+# Execulte the application
 try:
-	while len(patterns) < 5040: # 5040 is the mathematical maximum number of patterns 
+	# while we have not reached the maximum number of permutations
+	while len(patterns) < 5040: # 5040 is the mathematical maximum number of permutations 
+		
+		# Verify that the current pattern is not in the list of attempted permutations
 		if ((x in patterns) == False):
+			
+			# If the pattern is unique, add it to the list
 			patterns.append(x)
 
+			# Caclulate the "pyramid"
 			y = [
 				x[0], x[1], x[2], x[3],
 				abs(x[0] - x[1]), abs(x[1] - x[2]), abs(x[2] - x[3]),
@@ -69,23 +76,28 @@ try:
 				abs(abs(x[2] - x[3]) - abs(x[1] - x[2])),
 				abs(abs(abs(x[0] - x[1]) - abs(x[1] - x[2])) - abs(abs(x[2] - x[3]) - abs(x[1] - x[2])))
 				]
-
+			
+			# If the pyramid contains all then numbers once
 			if (1 in y and 2 in y and 3 in y and
 				4 in y and 5 in y and 6 in y and
 				7 in y and 8 in y and 9 in y and 10 in y ):
 
+				# append the solution
 				solutions.append(y)
 				solutions_str += str(y) + '\n     '
 
+			# Update the curses environment
 			stdscr.addstr(2, 5, "Attempts: " + str(attempts))
 			stdscr.addstr(3, 5, "Patterns: " + str(len(patterns)))
 			stdscr.addstr(4, 5, "Solutions: " + str(len(solutions)))
 			stdscr.addstr(5, 5, solutions_str)
 			stdscr.refresh()
 
+			# Increase the loop counter
 			attempts += 1 # Increment the attempt each round
 		x = random.sample(range(1,11),4) # Get a new sample
 
+	# All 5040 patterns are tested
 	stdscr.addstr(1, 5, "Program complete. Hit any key to exit.")
 	stdscr.refresh()
 	stdscr.getch()
